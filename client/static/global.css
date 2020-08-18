@@ -1,0 +1,103 @@
+@import "assets/hack-subset.css";
+
+/* body {
+	margin: 0;
+	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5em 0;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+a {
+	color: inherit;
+}
+
+code {
+	font-family: menlo, inconsolata, monospace;
+	font-size: calc(1em - 2px);
+	color: #555;
+	background-color: #f0f0f0;
+	padding: 0.2em 0.4em;
+	border-radius: 2px;
+}
+
+@media (min-width: 400px) {
+	body {
+		font-size: 16px;
+	}
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 131, 155, 0.22);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(11, 126, 152, 0.22);
+}
+
+html,
+body {
+  overflow-y: hidden;
+}
+
+* {
+  font-family: Hack, monospace !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+form .button {
+  color: white !important;
+  background-color: transparent;
+  border-color: rgba(22, 131, 155, 0.6) !important;
+}
+
+form .button:hover,
+.blueBox {
+  background-color: rgba(22, 131, 155, 0.22) !important;
+
+  border-color: rgba(11, 126, 152, 0.22) !important;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+}
+
+.blueBox:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.blueBox::placeholder {
+  color: #6c6c6c !important;
+  font-family: Hack, monospace !important;
+}
+
+.placeholder-center-text::placeholder {
+  text-align: center;
+}
+
+input.minimal {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 5px solid white;
+  padding: 15px;
+}
