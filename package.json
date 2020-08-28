@@ -34,5 +34,11 @@
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
     "svelte-preprocess": "^4.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/featherbear/CTF2-client.git"
+  },
+  "author": "featherbear",
+  "license": "MIT"
 }
