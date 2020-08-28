@@ -12,10 +12,17 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) =>
-	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
-	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+const onwarn = (warning, onwarn) => {
+	if ((warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message))) {
+		return true
+	}
+	
+	if (warning.message === 'Unused CSS selector') {
+		return true
+	}
 	onwarn(warning);
+}
 
 const preprocess = sveltePreprocess({
 	scss: {
