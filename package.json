@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "build": "sapper build",
     "start": "node __sapper__/build"
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
     "polka": "next",
     "sirv": "^1.0.0"
   },
