@@ -8,8 +8,9 @@
   @import "style/index.scss";
 </style>
 
-<Nav {segment} />
-
-<main>
+{#if segment !== undefined}
+  <Nav {segment} />
   <slot />
-</main>
+{:else}
+  <slot />
+{/if}

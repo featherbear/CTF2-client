@@ -1,8 +1,8 @@
 {
   "background_color": "#ffffff",
   "theme_color": "#333333",
-  "name": "TODO",
-  "short_name": "TODO",
+  "name": "Project CTF²",
+  "short_name": "CTF2",
   "display": "minimal-ui",
   "start_url": "/",
   "icons": [
