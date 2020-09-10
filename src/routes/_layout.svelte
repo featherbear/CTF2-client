@@ -1,16 +1,21 @@
+
+
 <script>
-  import Nav from "../components/Nav.svelte";
+  // import Nav from "../components/Nav.svelte";
 
   export let segment;
+  console.log("layout PROPS", $$props)
+
 </script>
 
 <style lang="scss" global>
   @import "style/index.scss";
 </style>
 
-{#if segment !== undefined}
-  <Nav {segment} />
+{#if [undefined, 'invite'].includes(segment) }
   <slot />
 {:else}
+  <!-- <Nav {segment} /> -->
+  Layout
   <slot />
 {/if}
