@@ -18,35 +18,78 @@
       salutation = "evening";
     }
   }
+
+  let page = 0;
+
+  let displayName;
+  let username;
+  let password;
+  let password2;
+
+  let displayNameElem;
+  let usernameElem;
+  let passwordElem;
+  let password2Elem;
 </script>
 
-<form>
-  <div class="page" name="name">
+{#if page === 0}
+  <h1 class="is-size-2 has-text-light">
     Good {salutation}, Agent
-    </style>
-    <h1 class="is-size-1 has-text-light">
-      Good <span class="salutation" />, Agent
-      <InputMinimal placeholder="(your display name)" maxlength="20" />.
-    </h1>
-  </div>
-  <div class="page" name="username">
-    <h1 class="is-size-1 has-text-light">
-      Username:
-      <InputMinimal
-        pattern="\w."
-        maxlength="20"
-        placeholder="(your username)" />
-    </h1>
-  </div>
-
-  <div class="page" name="password">
-    <h1 class="is-size-1 has-text-light">password</h1>
-    <InputBlue type="password" />
-  </div>
-
-  <div class="page" name="password2">
-    <h1 class="is-size-1 has-text-light">confirm</h1>
-    <InputBlue type="password" />
-  </div>
-  <span on:click={() => dispatch('changeState', STATE.METHOD)}>back</span>
-</form>
+    <InputMinimal
+      class="is-size-2"
+      placeholder="(your display name)"
+      maxlength="20"
+      varisize={true}
+      centered={true}
+      bind:elem={displayNameElem}
+      bind:value={displayName}
+      on:keydown={({ keyCode: code }) => {
+        if (code === 13 && !!displayName) {
+          // TODO: Check display name
+          page = 1;
+        }
+      }} />.
+  </h1>
+{:else if page === 1}
+  <h1 class="is-size-2 has-text-light">
+    Username:
+    <InputMinimal
+      class="is-size-2"
+      placeholder="(your username)"
+      pattern="\w."
+      maxlength="20"
+      varisize={true}
+      centered={true}
+      bind:elem={usernameElem}
+      bind:value={username}
+      on:keydown={({ keyCode: code }) => {
+        if (code === 13 && !!username) {
+          // TODO: Check username
+          page = 2;
+        }
+      }} />
+  </h1>
+{:else if page === 2}
+  <h1 class="is-size-1 has-text-light">password</h1>
+  <InputBlue
+    type="password"
+    bind:elem={passwordElem}
+    bind:value={password}
+    on:keydown={({ keyCode: code }) => {
+      if (code === 13 && !!password) {
+        page = 3;
+      }
+    }} />
+{:else if page === 3}
+  <h1 class="is-size-1 has-text-light">confirm</h1>
+  <InputBlue
+    type="password"
+    bind:elem={password2Elem}
+    bind:value={password2}
+    on:keydown={({ keyCode: code }) => {
+      if (code === 13 && password === password2) {
+        // TODO: Register
+        alert('Not implemented');
+      }
+    }} />
+{/if}
