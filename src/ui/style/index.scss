@@ -1,1 +1,8 @@
-@import 'bulma/bulma.sass'
+@import 'bulma/bulma.sass';
+
+@import '/font/hack.css';
+
+#app {
+    height: 100vh;
+    font-family: Hack, monospace !important;
+}
