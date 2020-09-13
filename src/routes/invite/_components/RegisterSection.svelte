@@ -4,12 +4,25 @@
 
   import STATE from "./STATE";
 
+  import { hourAccurate } from "../../../lib/DateTime";
   import { InputMinimal, InputBlue } from "../../../ui/components/Input";
+
+  let salutation;
+  $: {
+    let hour = $hourAccurate.getHours();
+    if (hour < 12) {
+      salutation = "morning";
+    } else if (hour < 18) {
+      salutation = "afternoon";
+    } else {
+      salutation = "evening";
+    }
+  }
 </script>
 
 <form>
   <div class="page" name="name">
-    <style>
+    Good {salutation}, Agent
     </style>
     <h1 class="is-size-1 has-text-light">
       Good <span class="salutation" />, Agent
