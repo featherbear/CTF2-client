@@ -27,6 +27,8 @@ if (!CTF2_ENDPOINT) {
     .catch(e => {
       console.error('Could not establish a connection to the server: ' + e.code)
     })
+    .then(() =>
+      express()
         .use(
           compression({ threshold: 0 }),
           sirv('static', { dev }),
@@ -37,8 +39,8 @@ if (!CTF2_ENDPOINT) {
           })
         )
         .listen(PORT, err => {
-          if (err) console.log('error', err)
+          console.info('Server started')
+          if (err) console.error('Error starting web server', err)
         })
-    }
     )
 }
