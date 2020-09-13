@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Welcome</title>
+  <title>Welcome</title>
 </svelte:head>
 
 <Center>

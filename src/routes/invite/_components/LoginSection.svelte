@@ -8,15 +8,9 @@
 </script>
 
 <form autocomplete="off">
-  <Input
-    type="text"
-    pattern="\w."
-    maxlength="20"
-    placeholder="username" />
+  <Input type="text" pattern="\w." maxlength="20" placeholder="username" />
 
-  <InputBlue
-    type="password"
-    placeholder="password" />
+  <InputBlue type="password" placeholder="password" />
 
   <span on:click={() => dispatch('changeState', STATE.METHOD)}>back</span>
 </form>

@@ -13,11 +13,9 @@
     color: #6c6c6c !important;
     font-family: Hack, monospace !important;
   }
-
 </style>
 
-<input 
-    {...$$props} 
-    spellcheck={!!$$props.spellcheck}
-    class="input has-text-centered blueBox {$$props.class || ''}" 
-/>
+<input
+  {...$$props}
+  spellcheck={!!$$props.spellcheck}
+  class="input has-text-centered blueBox {$$props.class || ''}" />
