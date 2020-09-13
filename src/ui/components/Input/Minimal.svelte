@@ -8,14 +8,16 @@
     border-bottom: 5px solid white;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    outline: none;
-    border: none;
-    border-bottom: 5px solid white;
-    padding: 15px;
+  }
+  .varisize {
+    width: auto;
+    height: auto;
   }
 </style>
 
 <input
   {...$$props}
   spellcheck={!!$$props.spellcheck}
-  class="input has-text-centered has-text-light minimal {$$props.class || ''}" />
+  class="input has-text-light minimal {$$props.class || ''}"
+  class:has-text-centered={!!$$props.centered}
+  class:varisize={!!$$props.varisize}
