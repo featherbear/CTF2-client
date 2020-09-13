@@ -1,3 +1,8 @@
+<script>
+  export let elem;
+  export let value;
+</script>
+
 <style>
   .minimal {
     background-color: transparent;
@@ -16,8 +21,11 @@
 </style>
 
 <input
+  bind:this={elem}
+  bind:value
   {...$$props}
   spellcheck={!!$$props.spellcheck}
   class="input has-text-light minimal {$$props.class || ''}"
   class:has-text-centered={!!$$props.centered}
   class:varisize={!!$$props.varisize}
+  on:keydown />

@@ -1,3 +1,8 @@
+<script>
+  export let elem;
+  export let value;
+</script>
+
 <style>
   .blueBox {
     background-color: rgba(22, 131, 155, 0.22) !important;
@@ -16,6 +21,9 @@
 </style>
 
 <input
+  bind:this={elem}
+  bind:value
   {...$$props}
   spellcheck={!!$$props.spellcheck}
-  class="input has-text-centered blueBox {$$props.class || ''}" />
+  class="input has-text-centered blueBox {$$props.class || ''}"
+  on:keydown />
