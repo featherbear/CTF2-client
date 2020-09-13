@@ -9,7 +9,7 @@
 </script>
 
 <style lang="scss" global>
-  @import "style/index.scss";
+  @import "../ui/style/index.scss";
 </style>
 
 {#if [undefined, 'invite'].includes(segment) }
