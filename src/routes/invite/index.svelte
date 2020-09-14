@@ -28,6 +28,15 @@
 
     z-index: -1;
 
+    &:after {
+        content: "";
+        position: absolute;
+        width:100vw;
+        height: 100vh;
+        background-color: rgba(0, 35, 88, 0.7);
+        // background-color: rgba(48, 63, 116, 0.6);
+    }
+
     canvas {
       position: absolute;
     }
