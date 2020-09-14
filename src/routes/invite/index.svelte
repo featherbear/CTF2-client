@@ -12,20 +12,32 @@
 
   import Center from "../../ui/components/_Center.svelte";
 
-  import {onMount} from "svelte";
-  let canvas;
-  onMount(async ()=> {
-    let init = (await import("./_components/glitch/")).default
-    init(canvas, 'background.jpg')
-  })
+  import { onMount } from "svelte";
+  let canvasElem;
+  onMount(async () => {
+    let init = (await import("./_components/glitch/")).default;
+    init(canvasElem, "background.jpg");
+  });
 </script>
+
+<style lang="scss">
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    canvas {
+      position: absolute;
+    }
+  }
+</style>
 
 <svelte:head>
   <title>Welcome</title>
 </svelte:head>
-<div class="background">
-  <canvas bind:this={canvas} id="backgroundCanvas"></canvas>
-</div>
+
 <Center>
   <section class="has-text-centered">
     {#if pageState === STATE.INVITE}
@@ -38,4 +50,6 @@
       <RegisterSection on:changeState={changeState} />
     {/if}
   </section>
+
+  <div class="background"><canvas bind:this={canvasElem} /></div>
 </Center>
