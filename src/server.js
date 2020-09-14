@@ -26,6 +26,7 @@ if (!CTF2_ENDPOINT) {
     })
     .catch(e => {
       console.error('Could not establish a connection to the server: ' + e.code)
+      process.exit(1)
     })
     .then(() =>
       express()
