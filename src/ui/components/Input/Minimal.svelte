@@ -3,7 +3,7 @@
   export let value;
 </script>
 
-<style>
+<style lang="scss">
   .minimal {
     background-color: transparent;
     padding: 0;
@@ -13,6 +13,10 @@
     border-bottom: 5px solid white;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+
+    &::placeholder {
+      color: whitesmoke;
+    }
   }
   .varisize {
     width: auto;
