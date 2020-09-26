@@ -16,7 +16,7 @@
   let canvasElem;
   onMount(async () => {
     let init = (await import("./_components/glitch/")).default;
-    init(canvasElem, "background.jpg");
+    init(canvasElem, "/background.jpg");
   });
 </script>
 
@@ -44,7 +44,7 @@
 </style>
 
 <svelte:head>
-  <title>Welcome</title>
+  <title>Welcome</title>  
 </svelte:head>
 
 <Center>
