@@ -1,6 +1,8 @@
 <script>
   import Icon from "svelte-awesome";
   import { arrowCircleOLeft } from "svelte-awesome/icons";
+  import Center from "../../ui/components/_Center.svelte";
+
   import {
     STATE,
     InviteSection,
@@ -12,14 +14,11 @@
   let pageHistory = [];
   let pageState = STATE.INVITE;
 
-  const changeState = ({ detail }) => {  
-    pageHistory.push(pageState)
+  const changeState = ({ detail }) => {
+    pageHistory.push(pageState);
     pageState = detail;
   };
-  const restoreState = () => pageState = pageHistory.pop()
-  
-
-  import Center from "../../ui/components/_Center.svelte";
+  const restoreState = () => (pageState = pageHistory.pop());
 
   import { onMount } from "svelte";
   let canvasElem;
@@ -38,12 +37,12 @@
     z-index: -1;
 
     &:after {
-        content: "";
-        position: absolute;
-        width:100vw;
-        height: 100vh;
-        background-color: rgba(0, 35, 88, 0.7);
-        // background-color: rgba(48, 63, 116, 0.6);
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 35, 88, 0.7);
+      // background-color: rgba(48, 63, 116, 0.6);
     }
 
     canvas {
@@ -64,7 +63,7 @@
 </style>
 
 <svelte:head>
-  <title>Welcome</title>  
+  <title>Welcome</title>
 </svelte:head>
 
 <Center>
