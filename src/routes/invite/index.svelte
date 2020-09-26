@@ -1,4 +1,6 @@
 <script>
+  import Icon from "svelte-awesome";
+  import { arrowCircleOLeft } from "svelte-awesome/icons";
   import {
     STATE,
     InviteSection,
@@ -48,6 +50,17 @@
       position: absolute;
     }
   }
+
+  .backButtonContainer {
+    margin-top: 10px;
+
+    > span {
+      cursor: pointer;
+      span:last-child {
+        margin-left: 5px;
+      }
+    }
+  }
 </style>
 
 <svelte:head>
@@ -67,8 +80,14 @@
     {/if}
 
     {#if pageState !== STATE.INVITE}
-      <!-- TODO: Back icon -->
-      <div on:click={restoreState}>[Back Button]</div>
+      <p class="control backButtonContainer">
+        <span
+          class="button is-small is-white is-outlined"
+          on:click={restoreState}>
+          <Icon data={arrowCircleOLeft} />
+          <span>Back</span>
+        </span>
+      </p>
     {/if}
   </section>
 
