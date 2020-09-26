@@ -6,9 +6,16 @@
     LoginSection,
     RegisterSection,
   } from "./_components";
-  let pageState = STATE.REGISTER;
 
-  const changeState = ({ detail }) => (pageState = detail);
+  let pageHistory = [];
+  let pageState = STATE.INVITE;
+
+  const changeState = ({ detail }) => {  
+    pageHistory.push(pageState)
+    pageState = detail;
+  };
+  const restoreState = () => pageState = pageHistory.pop()
+  
 
   import Center from "../../ui/components/_Center.svelte";
 
@@ -57,6 +64,11 @@
       <LoginSection on:changeState={changeState} />
     {:else if pageState === STATE.REGISTER}
       <RegisterSection on:changeState={changeState} />
+    {/if}
+
+    {#if pageState !== STATE.INVITE}
+      <!-- TODO: Back icon -->
+      <div on:click={restoreState}>[Back Button]</div>
     {/if}
   </section>
 
