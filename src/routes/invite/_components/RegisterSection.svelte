@@ -37,6 +37,12 @@
   let password2Elem;
 </script>
 
+<style>
+  .notification {
+    margin-top: 10px;
+  }
+</style>
+
 {#if page === 0}
   <h1 class="is-size-2 has-text-light">
     Good {salutation}, Agent
@@ -68,8 +74,9 @@
         }
       }} />.
   </h1>
+
   {#if nameInUse}
-      Name taken :(
+    <div class="notification is-danger is-light">Name taken :(</div>
   {/if}
 {:else if page === 1}
   <h1 class="is-size-2 has-text-light">
@@ -102,7 +109,7 @@
       }} />
   </h1>
   {#if usernameInUse}
-      Username taken :(
+    <div class="notification is-danger is-light">Username taken :(</div>
   {/if}
 {:else if page === 2}
   <h1 class="is-size-1 has-text-light">password</h1>
@@ -113,11 +120,12 @@
     bind:value={password}
     on:keydown={({ keyCode: code }) => {
       if (code === 13 && !!password) {
+        passwordMismatch = false;
         page = 3;
       }
     }} />
   {#if passwordMismatch}
-      Passwords don't match
+    <div class="notification is-danger is-light">Passwords don't match</div>
   {/if}
 {:else if page === 3}
   <h1 class="is-size-1 has-text-light">confirm</h1>
@@ -157,7 +165,9 @@
     }} />
 
   {#if registerError}
+    <div class="notification is-danger is-light">
       Something went wrong :(
       <code>{registerError}</code>
+    </div>
   {/if}
 {/if}
