@@ -41,6 +41,7 @@ if (!CTF2_ENDPOINT) {
         )
         .listen(PORT, err => {
           console.info('Server started')
+          global.START_TIME = new Date()
           if (err) console.error('Error starting web server', err)
         })
     )

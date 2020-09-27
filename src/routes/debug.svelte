@@ -5,17 +5,22 @@
     return {
       hello: await fetch("hello").then((r) => r.json()),
       CTF2_ENDPOINT: fetch.base,
+      START_TIME: global.START_TIME
     };
   }
 </script>
 
 <script>
   export let hello;
+  export let START_TIME;
   export let CTF2_ENDPOINT;
 
   import { secondAccurate as currentTime, parseDelta } from "../lib/DateTime";
-  let server_uptime;
-  $: server_uptime = parseDelta($currentTime - new Date(hello.START_TIME));
+  let client_uptime, server_uptime;
+  $: {
+    client_uptime = parseDelta($currentTime - new Date(START_TIME));
+    server_uptime = parseDelta($currentTime - new Date(hello.START_TIME));
+  }
 </script>
 
 <style lang="scss">
@@ -45,7 +50,10 @@
         </div>
       </div>
       <div class="container">
-      </div>
+        <div class="block">
+          <p>Frontend server started: {new Date(START_TIME)}</p>
+          <p>Frontend server uptime: {client_uptime}</p>
+        </div>
     </section>
 
     <section>
