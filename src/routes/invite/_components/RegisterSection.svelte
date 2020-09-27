@@ -152,8 +152,8 @@
         );
         if (result) {
           console.info(`Got auth token: ${data}`);
-          auth.token = data
-          window.location = '/'
+          auth.token = data;
+          window.location = '/';
         } else {
           registerError = data;
         }
