@@ -1,8 +1,13 @@
 <script>
   export let elem;
   export let value;
-
 </script>
+
+<style>
+  input {
+    font-family: Hack, monospace !important;
+  }
+</style>
 
 <input
   bind:this={elem}
