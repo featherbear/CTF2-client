@@ -44,11 +44,85 @@
   }
 </script>
 
-<div>
-  <div>
-    <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
-  </div>
-  <div>
+<style lang="scss">
+  article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    main {
+      flex: 1;
+    }
+  }
+</style>
+
+<svelte:head>
+  <title>Debug</title>
+</svelte:head>
+
+<article>
+  <main>
+    <section>
+      <div class="hero is-warning is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Project CTF² Client Debug</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+      </div>
+    </section>
+
+    <section>
+      <div class="hero is-info is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Project CTF² Server Debug</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container block">
+        <div class="block">
+          <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
+        </div>
+        <div>
+          <div class="block">
+            <p>Server started: {new Date(hello.START_TIME)}</p>
+            <p>Server uptime: {server_uptime}</p>
+          </div>
+          <div class="block">
+            Response from
+            <code>{CTF2_ENDPOINT}/hello</code>
+            <pre>{JSON.stringify(hello, undefined, 2)}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container content has-text-centered">
+      <figure class="image is-128x128" style="margin: 0 auto">
+        <img
+          src="https://raw.githubusercontent.com/featherbear/CTF2-client/master/src/ui/graphics/ctf2.png"
+          alt="Project CTF² Logo" />
+      </figure>
+      <p>
+        <strong><a href="https://github.com/featherbear/CTF2">Project CTF²</a></strong>
+        by
+        <a href="https://featherbear.cc">Andrew Wong</a>.
+      </p>
+      <div>
+        The source code is licensed under the
+        <a href="https://github.com/featherbear/CTF2/blob/master/LICENSE.md">MIT
+          License</a>.
+
+        <p>You may not remove this license text.</p>
+      </div>
+    </div>
+  </footer>
+</article>
           <div class="block">
             <p>Server started: {new Date(hello.START_TIME)}</p>
             <p>Server uptime: {server_uptime}</p>
