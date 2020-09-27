@@ -4,7 +4,6 @@ export const getDate = () => new Date()
 
 export const secondAccurate = readable(new Date(), (set) => {
   const interval = setInterval(() => {
-      console.log('tick');
     set(new Date())
   }, 1000)
 
