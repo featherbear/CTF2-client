@@ -2,6 +2,7 @@ import sirv from 'sirv'
 import express from 'express'
 import compression from 'compression'
 import * as sapper from '@sapper/server'
+const { createProxyMiddleware } = require('http-proxy-middleware')
 import Fetcher from './lib/Fetcher'
 
 const { PORT, NODE_ENV } = process.env
@@ -33,6 +34,14 @@ if (!CTF2_ENDPOINT) {
         .use(
           compression({ threshold: 0 }),
           sirv('static', { dev }),
+          createProxyMiddleware('/proxy', {
+            target: CTF2_ENDPOINT,
+            changeOrigin: true,
+            pathRewrite: {
+              '^/proxy': ''
+            },
+            logLevel: 'error'
+          }),
           sapper.middleware({
             session: (req, res) => ({
               // TODO: Session
