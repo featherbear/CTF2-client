@@ -5,7 +5,7 @@
     return {
       hello: await fetch("hello").then((r) => r.json()),
       CTF2_ENDPOINT: fetch.base,
-      START_TIME: global.START_TIME
+      START_TIME: global.START_TIME,
     };
   }
 </script>
@@ -42,6 +42,7 @@
 <article>
   <main>
     <section>
+      <!-- Frontend Server -->
       <div class="hero is-warning is-bold">
         <div class="hero-body">
           <div class="container">
@@ -57,6 +58,7 @@
     </section>
 
     <section>
+      <!-- Backend Server -->
       <div class="hero is-info is-bold">
         <div class="hero-body">
           <div class="container">
@@ -69,16 +71,14 @@
         <div class="block">
           <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
         </div>
-        <div>
-          <div class="block">
-            <p>Server started: {new Date(hello.START_TIME)}</p>
-            <p>Server uptime: {server_uptime}</p>
-          </div>
-          <div class="block">
-            Response from
-            <code>{CTF2_ENDPOINT}/hello</code>
-            <pre>{JSON.stringify(hello, undefined, 2)}</pre>
-          </div>
+        <div class="block">
+          <p>Backend server started: {new Date(hello.START_TIME)}</p>
+          <p>Backend server uptime: {server_uptime}</p>
+        </div>
+        <div class="block">
+          Response from
+          <code>{CTF2_ENDPOINT}/hello</code>
+          <pre>{JSON.stringify(hello, undefined, 2)}</pre>
         </div>
       </div>
     </section>
