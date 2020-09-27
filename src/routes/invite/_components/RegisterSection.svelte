@@ -36,6 +36,7 @@
   <h1 class="is-size-2 has-text-light">
     Good {salutation}, Agent
     <InputMinimal
+      autofocus
       class="is-size-2"
       placeholder="(your display name)"
       maxlength="20"
@@ -54,6 +55,7 @@
   <h1 class="is-size-2 has-text-light">
     Username:
     <InputMinimal
+      autofocus
       class="is-size-2"
       placeholder="(your username)"
       pattern="\w."
@@ -72,6 +74,7 @@
 {:else if page === 2}
   <h1 class="is-size-1 has-text-light">password</h1>
   <InputBlue
+    autofocus
     type="password"
     bind:elem={passwordElem}
     bind:value={password}
@@ -83,6 +86,7 @@
 {:else if page === 3}
   <h1 class="is-size-1 has-text-light">confirm</h1>
   <InputBlue
+    autofocus
     type="password"
     bind:elem={password2Elem}
     bind:value={password2}
