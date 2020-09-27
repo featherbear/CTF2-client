@@ -4,7 +4,7 @@
   // import Nav from "../components/Nav.svelte";
 
   export let segment;
-  console.log("layout PROPS", $$props)
+  // console.log("layout PROPS", $$props)
 
 </script>
 
@@ -12,10 +12,10 @@
   @import "../ui/style/index.scss";
 </style>
 
-{#if [undefined, 'invite'].includes(segment) }
+{#if [undefined, 'invite', 'debug'].includes(segment) }
   <slot />
 {:else}
   <!-- <Nav {segment} /> -->
-  Layout
+  LAYOUT
   <slot />
 {/if}

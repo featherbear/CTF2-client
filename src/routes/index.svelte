@@ -3,3 +3,10 @@
         console.log("PRELOAD", this, page, session);
     }
 </script> 
+
+<script>
+    import {questions} from "../AppData"
+</script>
+
+{@debug $questions}
+{$questions}

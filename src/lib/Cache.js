@@ -1,0 +1,3 @@
+/* Cache layer */
+
+// TODO: Redis?
