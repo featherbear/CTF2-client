@@ -12,6 +12,36 @@
 <script>
   export let hello;
   export let CTF2_ENDPOINT;
+
+  import { secondAccurate } from "../lib/DateTime";
+  let server_uptime;
+  $: {
+    let delta = $secondAccurate - new Date(hello.START_TIME);
+    const seconds = delta / 1000;
+    const minutes = seconds / 60;
+    const hours = minutes / 60;
+    const days = hours / 24;
+    const months = days / (365 / 12);
+    const years = months / 12;
+
+    // Did you know JavaScript object keys have a positional index?
+    let timeCalc = {
+      y: ~~years,
+      m: ~~(months % 12),
+      d: ~~(days % (365 / 12)),
+      hr: ~~(hours % 24),
+      min: ~~(minutes % 60),
+      s: ~~(seconds % 60),
+    };
+
+    let idx = Object.values(timeCalc).findIndex((v) => v);
+    idx = idx > -1 ? idx : 5;
+    let str = "";
+    for (let [key, val] of Object.entries(timeCalc).slice(idx, idx + 3)) {
+      str += `${val} ${key} `;
+    }
+    server_uptime = str.trim();
+  }
 </script>
 
 <div>
@@ -19,10 +49,10 @@
     <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
   </div>
   <div>
-    Response from <code>{CTF2_ENDPOINT}/hello</code>
-    <pre>{JSON.stringify(hello, undefined, 2)}</pre>
-  </div>
-</div>
+          <div class="block">
+            <p>Server started: {new Date(hello.START_TIME)}</p>
+            <p>Server uptime: {server_uptime}</p>
+          </div>
   <footer class="footer">
     <div class="container content has-text-centered">
       <figure class="image is-128x128" style="margin: 0 auto">
