@@ -1,9 +1,5 @@
 <script>
   import { clientFetch, auth } from "../../../lib/ClientUtils";
-  const dispatch = createEventDispatcher();
-
-  import STATE from "./STATE";
-
   import { hourAccurate } from "../../../lib/DateTime";
   import { InputMinimal, InputBlue } from "../../../ui/components/Input";
 
