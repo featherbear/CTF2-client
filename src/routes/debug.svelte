@@ -123,28 +123,3 @@
     </div>
   </footer>
 </article>
-          <div class="block">
-            <p>Server started: {new Date(hello.START_TIME)}</p>
-            <p>Server uptime: {server_uptime}</p>
-          </div>
-  <footer class="footer">
-    <div class="container content has-text-centered">
-      <figure class="image is-128x128" style="margin: 0 auto">
-        <img
-          src="https://raw.githubusercontent.com/featherbear/CTF2-client/master/src/ui/graphics/ctf2.png"
-          alt="Project CTF² Logo" />
-      </figure>
-      <p>
-        <strong><a href="https://github.com/featherbear/CTF2">Project CTF²</a></strong>
-        by
-        <a href="https://featherbear.cc">Andrew Wong</a>.
-      </p>
-      <div>
-        The source code is licensed under the
-        <a href="https://github.com/featherbear/CTF2/blob/master/LICENSE.md">MIT
-          License</a>.
-
-        <p>You may not remove this license text.</p>
-      </div>
-    </div>
-  </footer>
