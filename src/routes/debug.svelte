@@ -55,6 +55,23 @@
           <p>Frontend server started: {new Date(START_TIME)}</p>
           <p>Frontend server uptime: {client_uptime}</p>
         </div>
+        <!-- <table class="table is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each Object.entries(process.env) as [key, val]}
+              <tr>
+                <th>{key}</th>
+                <td>{val}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table> -->
+      </div>
     </section>
 
     <section>
