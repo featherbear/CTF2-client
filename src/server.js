@@ -9,6 +9,9 @@ const dev = NODE_ENV === 'development'
 
 require('dotenv').config()
 
+import getGitInfo from 'git-info'
+global.GIT_COMMIT = getGitInfo.getShaDirty()
+
 const { CTF2_ENDPOINT } = process.env
 
 if (!CTF2_ENDPOINT) {

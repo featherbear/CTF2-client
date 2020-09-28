@@ -11,6 +11,7 @@
     "compression": "^1.7.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "git-info": "https://github.com/featherbear/node-git-info",
     "node-fetch": "^2.6.1",
     "sirv": "^1.0.0",
     "svelte-awesome": "^2.3.0"
