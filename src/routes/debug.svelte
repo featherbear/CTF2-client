@@ -69,6 +69,9 @@
       </div>
       <div class="container my-3">
         <div class="block">
+          <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
+        </div>
+        <div class="block">
           <p>Frontend server started: {new Date(FRONTEND_DATA.START_TIME)}</p>
           <p>Frontend server uptime: {client_uptime}</p>
           {#if FRONTEND_DATA.GIT_COMMIT}
@@ -113,9 +116,6 @@
 
       <div class="container my-3">
         <div class="block">
-          <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
-        </div>
-        <div class="block">
           <p>Backend server started: {new Date(BACKEND_DATA.START_TIME)}</p>
           <p>Backend server uptime: {server_uptime}</p>
           {#if BACKEND_DATA.GIT_COMMIT}
@@ -124,10 +124,7 @@
         </div>
         <div class="block">
           <details>
-            <summary>
-              Raw response from
-              <code>{CTF2_ENDPOINT}/hello</code>
-            </summary>
+            <summary>Raw response from <code>/hello</code></summary>
             <pre>{JSON.stringify(BACKEND_DATA, undefined, 2)}</pre>
           </details>
         </div>
