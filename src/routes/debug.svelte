@@ -1,3 +1,8 @@
+<!--
+  Project CTF² Page
+  Note: Do not add any sensitive or critical data
+-->
+
 <script context="module">
   export async function preload(page, session) {
     const fetch = global.CTF2_fetch;
@@ -50,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container my-3">
         <div class="block">
           <p>Frontend server started: {new Date(START_TIME)}</p>
           <p>Frontend server uptime: {client_uptime}</p>
@@ -84,7 +89,7 @@
         </div>
       </div>
 
-      <div class="container block">
+      <div class="container my-3">
         <div class="block">
           <p>CTF2_ENDPOINT set to <code>{CTF2_ENDPOINT}</code></p>
         </div>
@@ -100,7 +105,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer pb-6">
     <div class="container content has-text-centered">
       <figure class="image is-128x128" style="margin: 0 auto">
         <img
