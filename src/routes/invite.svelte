@@ -1,7 +1,7 @@
 <script>
   import Icon from "svelte-awesome";
   import { arrowCircleOLeft } from "svelte-awesome/icons";
-  import Center from "../../ui/components/_Center.svelte";
+  import Center from "../ui/components/_Center.svelte";
 
   import {
     STATE,
@@ -9,7 +9,7 @@
     MethodSection,
     LoginSection,
     RegisterSection,
-  } from "./_components";
+  } from "../ui/components/invite";
 
   let pageHistory = [];
   let pageState = STATE.INVITE;
@@ -23,7 +23,7 @@
   import { onMount } from "svelte";
   let canvasElem;
   onMount(async () => {
-    let init = (await import("./_components/glitch/")).default;
+    let init = (await import("../ui/components/glitch")).default;
     init(canvasElem, "/background.jpg");
   });
 </script>
