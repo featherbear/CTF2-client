@@ -1,14 +1,6 @@
 <script>
   export let elem;
   export let value;
-
-  export let autofocus = false;
-  import { onMount } from 'svelte';
-  if (autofocus) {
-    onMount(() => {
-      elem.focus();
-    });
-  }
 </script>
 
 <style lang="scss">
@@ -21,7 +13,6 @@
     border-bottom: 5px solid white;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    font-family: Hack, monospace !important;
 
     &::placeholder {
       color: whitesmoke;
